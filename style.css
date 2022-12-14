@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Chivo Mono", monospace;
+}
+.app {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #f4fff8;
+}
+.nav-bar_dashboard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #f4fff8;
+}
+.nav-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f4fff8;
+  border-radius: 16px 0;
+  z-index: 2;
+}
+.nav-bar .search-bar {
+  position: relative;
+  width: 70%;
+}
+.nav-bar .search-bar .fa-search {
+  position: absolute;
+  left: 10px;
+  font-size: 1.1rem;
+  color: #009d7e;
+  bottom: 35%;
+}
+.nav-bar .fa-bell,
+.fa-bars {
+  padding: 1rem;
+  border-radius: 16px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #009d7e;
+}
+.nav-bar .fa-bars {
+  display: none;
+}
+.nav-bar .search-bar .search {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+
+  outline: none;
+  border: 1px #777 solid;
+  border-radius: 16px;
+}
+.nav-bar .notification {
+  position: relative;
+}
+.nav-bar .account-menu .menu-list {
+  position: absolute;
+  width: 30vw;
+  right: 50%;
+  top: 100%;
+  list-style: none;
+  border-radius: 1rem;
+  border-top-right-radius: 0px;
+  box-shadow: #009d7e 4px 4px 8px;
+  background-color: white;
+  display: none;
+}
+.nav-bar .account-menu .menu-list .list {
+  padding: 1rem;
+}
+.nav-bar .account-menu .menu-list .list:first-child {
+  border-bottom: 1.8px solid black;
+}
+.nav-bar .account-menu .menu-list .list .link {
+  padding: 1rem 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.side-bar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 100vh;
+  background-color: #009d7e;
+  /* display: none; */
+}
+.side-bar::before {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  right: -15px;
+  background-color: #0eae7ea9;
+}
+.side-bar .image-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 81px;
+  background-color: #ffffff60;
+}
+.side-bar .image-container .website-title {
+  color: white;
+  font-size: 1.3rem;
+}
+.side-bar-image {
+  width: 7vw;
+  background-size: cover;
+}
+.side-bar .side-list {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 7vh;
+  list-style: none;
+}
+.side-bar .side-list .list {
+  font-size: 1.3vw;
+  margin: 5px 0px;
+  padding: 10px 25px;
+  text-decoration: none;
+  color: white;
+}
+.side-bar .side-list .list:hover {
+  background-color: #ffffff60;
+}
+.side-bar .side-list .list-icons {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+.dashboard .dashboard-manage-device {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  /* background-color: red; */
+}
+.dashboard .dashboard-manage-device .statistic-devices {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  background-color: white;
+  box-shadow: #009d7e 4px 4px 8px;
+  width: 15vw;
+  height: 15vh;
+  padding: 10px;
+  border-radius: 1rem;
+  transition: all .5s;
+}
+.dashboard .dashboard-manage-device .statistic-devices:hover {
+  background-color: #009d7e;
+  cursor: pointer;
+  color: white;
+  transition: all .5s;
+}
+.dashboard .dashboard-manage-device .statistic-devices:hover  > .fa-line-chart{
+  color: white;
+  transition: all .5s;
+}
+.dashboard .dashboard-manage-device .statistic-devices > * {
+  margin-bottom: 10px;
+}
+.dashboard .dashboard-manage-device .statistic-devices .fa-line-chart {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  color: #009d7e;
+}
+@media only screen and (max-width: 900px) {
+  .nav-bar {
+    border-radius: 0;
+  }
+  .nav-bar .fa-bars {
+    display: block;
+  }
+  .nav-bar .account-menu .menu-list {
+    width: 70vw;
+    font-size: 0.8rem;
+  }
+  .side-bar {
+    width: 0;
+  }
+  .side-bar .side-list {
+    margin-left: -100px;
+  }
+  .dashboard .dashboard-manage-device {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dashboard .dashboard-manage-device .statistic-devices {
+    width: 35vw;
+    margin: 10px 0px;
+    height: 20vh;
+  }
+}
